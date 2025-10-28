@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<article class="kb-article">
+    <div class="article-header">
+        <div class="breadcrumb">
+            <a href="{{ '/' | relative_url }}">Home</a> &gt;
+            <a href="{{ '/knowledge-base/' | relative_url }}">Knowledge Base</a> &gt;
+            <span>{{ page.category }}</span>
+        </div>
+        <h1>{{ page.title }}</h1>
+        {% if page.description %}
+        <p class="article-description">{{ page.description }}</p>
+        {% endif %}
+        <div class="article-meta">
+            <span class="category-badge">{{ page.category }}</span>
+            {% if page.date %}
+            <span class="date">Last updated: {{ page.date | date: "%B %d, %Y" }}</span>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="article-content">
+        {{ content }}
+    </div>
+
+    {% if page.related %}
+    <div class="related-articles">
+        <h3>Related Articles</h3>
+        <ul>
+        {% for article in page.related %}
+            <li><a href="{{ article.url | relative_url }}">{{ article.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</article>

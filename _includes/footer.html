@@ -1,0 +1,30 @@
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>{{ site.title }}</h3>
+            <p>{{ site.description }}</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                <li><a href="{{ '/knowledge-base/' | relative_url }}">Knowledge Base</a></li>
+                {% if site.author.github %}
+                <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="{{ '/knowledge-base/#development' | relative_url }}">Development Environment</a></li>
+                <li><a href="{{ '/knowledge-base/#server' | relative_url }}">Server Setup</a></li>
+                <li><a href="{{ '/knowledge-base/#tools' | relative_url }}">Tools & CLI</a></li>
+                <li><a href="{{ '/knowledge-base/#references' | relative_url }}">Quick References</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}. Built with Jekyll and hosted on GitHub Pages.</p>
+    </div>
+</footer>

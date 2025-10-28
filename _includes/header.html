@@ -1,0 +1,24 @@
+<header class="site-header">
+    <nav class="nav-container">
+        <div class="nav-brand">
+            <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+            <li><a href="{{ '/knowledge-base/' | relative_url }}">Knowledge Base</a></li>
+            <li><a href="{{ '/#projects' | relative_url }}">Projects</a></li>
+            <li><a href="{{ '/#contact' | relative_url }}">Contact</a></li>
+            {% if site.author.github %}
+            <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a></li>
+            {% endif %}
+        </ul>
+        <button class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="theme-icon"></span>
+        </button>
+    </nav>
+</header>

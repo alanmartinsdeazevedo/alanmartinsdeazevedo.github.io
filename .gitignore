@@ -1,0 +1,37 @@
+# Jekyll build files
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby
+Gemfile.lock
+.bundle/
+vendor/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Local development
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node (if using npm for any tooling)
+node_modules/
+
+# Personal notes (you can uncomment this if you want to keep local notes)
+# NOTES.md
+# TODO.md
