@@ -2,13 +2,13 @@
 title: Alan Martins
 description: Software Developer & Technical Knowledge Base
 baseurl: ""
-url: "https://alanmartins.github.io"
+url: "https://alanmartinsdeazevedo.github.io"
 
 # Author information
 author:
   name: Alan Martins
-  email: your.email@example.com
-  github: alanmartins
+  email: alanmartins@beezes.com.br
+  github: alanmartinsdeazevedo
 
 # Build settings
 markdown: kramdown
