@@ -244,6 +244,44 @@ Add to `~/.gitconfig`:
     visual = log --oneline --graph --all
 ```
 
+## Advanced Commands
+
+### Empty Commit
+
+Create a commit without any changes (useful for triggering CI/CD or marking a point in history):
+
+```bash
+# Create an empty commit
+git commit --allow-empty -m "Trigger CI rebuild"
+
+# Use case examples:
+git commit --allow-empty -m "Trigger deployment"
+git commit --allow-empty -m "Mark milestone: v1.0.0 release"
+```
+
+### Amend Last Commit
+
+```bash
+# Modify the last commit message
+git commit --amend -m "New commit message"
+
+# Add forgotten files to last commit
+git add forgotten-file.txt
+git commit --amend --no-edit
+```
+
+### Cherry Pick
+
+Apply specific commits from one branch to another:
+
+```bash
+# Apply a specific commit to current branch
+git cherry-pick commit-hash
+
+# Cherry pick multiple commits
+git cherry-pick commit1 commit2 commit3
+```
+
 ## Best Practices
 
 ### Commit Messages

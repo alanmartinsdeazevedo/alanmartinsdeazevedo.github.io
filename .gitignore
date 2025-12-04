@@ -32,6 +32,8 @@ npm-debug.log*
 # Node (if using npm for any tooling)
 node_modules/
 
-# Personal notes (you can uncomment this if you want to keep local notes)
-# NOTES.md
-# TODO.md
+# local editor settings
+*.md
+.*/
+.*/**
+!_kb/*
