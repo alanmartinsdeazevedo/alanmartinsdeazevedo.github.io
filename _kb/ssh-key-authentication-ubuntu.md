@@ -28,6 +28,8 @@ This creates two files:
 - `~/.ssh/id_rsa` — your **private key** (never share this)
 - `~/.ssh/id_rsa.pub` — your **public key** (this goes on the server)
 
+> **Important**: The public key content should look like a single line starting with `ssh-rsa AAAA...` followed by a long string of characters. Make sure you copy the **public key** (`.pub` file), not the private key. When pasting into `authorized_keys`, the entire key must remain on a **single line** — line breaks will invalidate it.
+
 ## Step 2: Copy the Public Key to the Server
 
 ### Method 1: Using ssh-copy-id (Recommended)
