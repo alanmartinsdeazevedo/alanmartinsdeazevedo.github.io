@@ -1,0 +1,105 @@
+nav:
+  home: "Inicio"
+  projects: "Proyectos"
+  knowledge_base: "Base de Conocimiento"
+  contact: "Contacto"
+  github: "GitHub"
+
+hero:
+  greeting: "¡Hola, soy Alan!"
+  tagline: "Desarrollador de Software y Entusiasta de la Tecnología"
+  description: "Bienvenido a mi portafolio y base de conocimiento. Documento mi camino de aprendizaje, comparto guías técnicas y presento mis proyectos. Siéntete libre de explorar y aprender conmigo."
+  view_projects: "Ver Proyectos"
+  browse_kb: "Explorar Base de Conocimiento"
+
+about:
+  title: "Sobre Mí"
+  text: "Soy un desarrollador de software apasionado por construir soluciones eficientes y compartir conocimiento. Este sitio funciona como una vitrina de mi trabajo y un hub de documentación con guías técnicas y buenas prácticas que he aprendido en el camino."
+
+skills:
+  title: "Habilidades & Tecnologías"
+  backend: "Desarrollo Backend"
+  backend_desc: "Node.js, Java, Python, REST APIs, Diseño de Bases de Datos"
+  frontend: "Desarrollo Frontend"
+  frontend_desc: "HTML, CSS, JavaScript, React, Diseño Responsivo"
+  devops: "DevOps & Herramientas"
+  devops_desc: "Git, Docker, Linux, CI/CD, Servicios en la Nube"
+  mobile: "Desarrollo Móvil"
+  mobile_desc: "Flutter, Android, Desarrollo Cross-platform"
+
+projects:
+  title: "Proyectos Destacados"
+  view_details: "Ver Detalles"
+  view_all: "Ver Todos los Proyectos"
+  in_development: "En Desarrollo"
+  completed: "Completado"
+  archived: "Archivado"
+
+kb_preview:
+  title: "Base de Conocimiento"
+  description: "Explora guías, tutoriales y documentación técnica"
+  development: "Entorno de Desarrollo"
+  development_desc: "Guías de configuración para herramientas y entornos de desarrollo"
+  server: "Configuración de Servidor"
+  server_desc: "Guías de instalación y configuración para servidores"
+  tools: "Herramientas & CLI"
+  tools_desc: "Herramientas de línea de comandos y optimización del flujo de trabajo"
+  references: "Referencias Rápidas"
+  references_desc: "Cheat sheets y guías de referencia rápida"
+  view_guides: "Ver Guías"
+
+kb_page:
+  title: "Base de Conocimiento"
+  tagline: "Guías Técnicas & Documentación"
+  search_placeholder: "Buscar artículos..."
+
+kb_index:
+  sections:
+    development: "Entorno de Desarrollo"
+    server: "Configuración de Servidor"
+    tools: "Herramientas & CLI"
+    references: "Referencias Rápidas"
+  categories:
+    java_jdk: "Java & JDK"
+    flutter_mobile: "Flutter & Móvil"
+    ide_setup: "Configuración de IDE"
+    nodejs: "Node.js"
+    web_servers: "Servidores Web"
+    ssh_remote: "SSH & Acceso Remoto"
+    databases: "Bases de Datos"
+    git: "Git"
+    docker: "Docker"
+    package_managers: "Gestores de Paquetes"
+    command_sheets: "Hojas de Referencia de Comandos"
+    config_templates: "Plantillas de Configuración"
+    troubleshooting: "Solución de Problemas"
+
+projects_page:
+  title: "Proyectos"
+  tagline: "Software que He Desarrollado"
+
+contact:
+  title: "Ponte en Contacto"
+  description: "No dudes en contactarme para colaboraciones o simplemente para una charla amistosa"
+  email: "Correo"
+
+footer:
+  quick_links: "Enlaces Rápidos"
+  categories: "Categorías"
+  development: "Entorno de Desarrollo"
+  server: "Configuración de Servidor"
+  tools: "Herramientas & CLI"
+  references: "Referencias Rápidas"
+  built_with: "Construido con Jekyll y alojado en GitHub Pages."
+
+article:
+  home: "Inicio"
+  kb: "Base de Conocimiento"
+  last_updated: "Última actualización:"
+  related: "Artículos Relacionados"
+
+project_layout:
+  home: "Inicio"
+  projects: "Proyectos"
+  github: "Ver en GitHub"
+  live_demo: "Demo en Vivo"

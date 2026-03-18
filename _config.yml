@@ -1,3 +1,9 @@
+# Polyglot i18n
+languages: ["en", "pt-br", "es"]
+default_lang: "en"
+exclude_from_localization: ["assets", "robots.txt", "sitemap.xml", "CNAME"]
+parallel_localization: false
+
 # Site settings
 title: Alan Martins
 description: Software Developer & Technical Knowledge Base
@@ -20,6 +26,9 @@ collections:
   kb:
     output: true
     permalink: /kb/:title/
+  projects:
+    output: true
+    permalink: /projects/:title/
 
 # Defaults
 defaults:
@@ -28,6 +37,11 @@ defaults:
       type: "kb"
     values:
       layout: "article"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
   - scope:
       path: ""
     values:
@@ -43,5 +57,6 @@ exclude:
 
 # Plugins
 plugins:
+  - jekyll-polyglot
   - jekyll-seo-tag
   - jekyll-sitemap

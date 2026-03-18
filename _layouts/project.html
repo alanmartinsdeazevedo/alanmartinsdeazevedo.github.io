@@ -1,0 +1,55 @@
+---
+layout: default
+---
+{% assign t = site.data.translations[site.active_lang] %}
+
+<article class="project-page">
+    <div class="project-page-header">
+        <div class="breadcrumb">
+            <a href="{{ '/' | relative_url }}">{{ t.project_layout.home }}</a> &gt;
+            <a href="{{ '/projects/' | relative_url }}">{{ t.project_layout.projects }}</a> &gt;
+            <span>{{ page.title }}</span>
+        </div>
+
+        <h1>{{ page.title }}</h1>
+
+        {% if page.description %}
+        <p class="project-page-description">{{ page.description }}</p>
+        {% endif %}
+
+        <div class="project-page-meta">
+            {% if page.status %}
+            {% assign status_key = page.status | downcase | replace: ' ', '_' %}
+            <span class="project-status project-status--{{ page.status | downcase | replace: ' ', '-' }}">{{ t.projects[status_key] }}</span>
+            {% endif %}
+            {% if page.date %}
+            <span class="date">{{ page.date | date: "%B %Y" }}</span>
+            {% endif %}
+        </div>
+
+        {% if page.tech %}
+        <div class="project-tech-tags">
+            {% for tag in page.tech %}
+            <span class="tech-tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="project-page-links">
+            {% if page.github %}
+            <a href="{{ page.github }}" class="btn" target="_blank" rel="noopener">
+                {{ t.project_layout.github }}
+            </a>
+            {% endif %}
+            {% if page.demo %}
+            <a href="{{ page.demo }}" class="btn btn-secondary" target="_blank" rel="noopener">
+                {{ t.project_layout.live_demo }}
+            </a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="project-page-content">
+        {{ content }}
+    </div>
+</article>

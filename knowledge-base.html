@@ -3,35 +3,36 @@ layout: default
 title: Knowledge Base
 description: Technical guides, tutorials, and documentation
 ---
+{% assign t = site.data.translations[site.active_lang] %}
 
 <section class="hero" style="padding: var(--spacing-lg) 0;">
-    <h1>Knowledge Base</h1>
-    <p class="tagline">Technical Guides & Documentation</p>
+    <h1>{{ t.kb_page.title }}</h1>
+    <p class="tagline">{{ t.kb_page.tagline }}</p>
 </section>
 
 <div class="search-box">
-    <input type="text" id="kb-search" placeholder="Search articles..." />
+    <input type="text" id="kb-search" placeholder="{{ t.kb_page.search_placeholder }}" />
 </div>
 
 <section id="development" class="section">
-    <h2>Development Environment</h2>
+    <h2>{{ t.kb_index.sections.development }}</h2>
     <div class="kb-grid">
         <div class="kb-category">
-            <h3>Java & JDK</h3>
+            <h3>{{ t.kb_index.categories.java_jdk }}</h3>
             <ul>
                 <li><a href="{{ '/kb/installing-jdk-ubuntu/' | relative_url }}">Installing JDK on Ubuntu</a></li>
                 <li><a href="#">Setting Up Java Environment Variables</a></li>
             </ul>
         </div>
         <div class="kb-category">
-            <h3>Flutter & Mobile</h3>
+            <h3>{{ t.kb_index.categories.flutter_mobile }}</h3>
             <ul>
                 <li><a href="{{ '/kb/flutter-setup-ubuntu/' | relative_url }}">Flutter Setup on Ubuntu</a></li>
                 <li><a href="#">Android SDK Configuration</a></li>
             </ul>
         </div>
         <div class="kb-category">
-            <h3>IDE Setup</h3>
+            <h3>{{ t.kb_index.categories.ide_setup }}</h3>
             <ul>
                 <li><a href="#">VS Code Configuration</a></li>
                 <li><a href="#">IntelliJ IDEA Setup</a></li>
@@ -41,30 +42,30 @@ description: Technical guides, tutorials, and documentation
 </section>
 
 <section id="server" class="section">
-    <h2>Server Setup</h2>
+    <h2>{{ t.kb_index.sections.server }}</h2>
     <div class="kb-grid">
         <div class="kb-category">
-            <h3>Node.js</h3>
+            <h3>{{ t.kb_index.categories.nodejs }}</h3>
             <ul>
                 <li><a href="{{ '/kb/nodejs-ubuntu-install/' | relative_url }}">Installing Node.js on Ubuntu Server</a></li>
                 <li><a href="#">Node.js Version Management with nvm</a></li>
             </ul>
         </div>
         <div class="kb-category">
-            <h3>Web Servers</h3>
+            <h3>{{ t.kb_index.categories.web_servers }}</h3>
             <ul>
                 <li><a href="{{ '/kb/nginx-basic-setup/' | relative_url }}">Nginx Basic Configuration</a></li>
                 <li><a href="{{ '/kb/letsencrypt-certbot-nginx-ubuntu/' | relative_url }}">Setting Up SSL with Let's Encrypt and Certbot</a></li>
             </ul>
         </div>
         <div class="kb-category">
-            <h3>SSH & Remote Access</h3>
+            <h3>{{ t.kb_index.categories.ssh_remote }}</h3>
             <ul>
                 <li><a href="{{ '/kb/ssh-key-authentication-ubuntu/' | relative_url }}">SSH Key Authentication on Ubuntu Server</a></li>
             </ul>
         </div>
         <div class="kb-category">
-            <h3>Databases</h3>
+            <h3>{{ t.kb_index.categories.databases }}</h3>
             <ul>
                 <li><a href="#">PostgreSQL Installation</a></li>
                 <li><a href="#">MongoDB Setup Guide</a></li>
@@ -74,10 +75,10 @@ description: Technical guides, tutorials, and documentation
 </section>
 
 <section id="tools" class="section">
-    <h2>Tools & CLI</h2>
+    <h2>{{ t.kb_index.sections.tools }}</h2>
     <div class="kb-grid">
         <div class="kb-category">
-            <h3>Git</h3>
+            <h3>{{ t.kb_index.categories.git }}</h3>
             <ul>
                 <li><a href="{{ '/kb/git-workflow-guide/' | relative_url }}">Essential Git Workflows</a></li>
                 <li><a href="{{ '/kb/git-change-remote-url/' | relative_url }}">Changing Git Remote Repository URL</a></li>
@@ -85,7 +86,7 @@ description: Technical guides, tutorials, and documentation
             </ul>
         </div>
         <div class="kb-category">
-            <h3>Docker</h3>
+            <h3>{{ t.kb_index.categories.docker }}</h3>
             <ul>
                 <li><a href="{{ '/kb/docker-installation-ubuntu/' | relative_url }}">Docker Installation on Ubuntu 22.04 LTS</a></li>
                 <li><a href="#">Docker Basics</a></li>
@@ -93,7 +94,7 @@ description: Technical guides, tutorials, and documentation
             </ul>
         </div>
         <div class="kb-category">
-            <h3>Package Managers</h3>
+            <h3>{{ t.kb_index.categories.package_managers }}</h3>
             <ul>
                 <li><a href="#">npm Best Practices</a></li>
                 <li><a href="#">apt Package Management</a></li>
@@ -103,10 +104,10 @@ description: Technical guides, tutorials, and documentation
 </section>
 
 <section id="references" class="section">
-    <h2>Quick References</h2>
+    <h2>{{ t.kb_index.sections.references }}</h2>
     <div class="kb-grid">
         <div class="kb-category">
-            <h3>Command Cheat Sheets</h3>
+            <h3>{{ t.kb_index.categories.command_sheets }}</h3>
             <ul>
                 <li><a href="#">Linux Commands</a></li>
                 <li><a href="#">Git Commands</a></li>
@@ -114,14 +115,14 @@ description: Technical guides, tutorials, and documentation
             </ul>
         </div>
         <div class="kb-category">
-            <h3>Configuration Templates</h3>
+            <h3>{{ t.kb_index.categories.config_templates }}</h3>
             <ul>
                 <li><a href="#">Common nginx Configs</a></li>
                 <li><a href="#">gitignore Templates</a></li>
             </ul>
         </div>
         <div class="kb-category">
-            <h3>Troubleshooting</h3>
+            <h3>{{ t.kb_index.categories.troubleshooting }}</h3>
             <ul>
                 <li><a href="{{ '/kb/rdp-port-not-opening-windows/' | relative_url }}">RDP Enabled but Port Not Opening on Windows</a></li>
                 <li><a href="#">Common Errors & Solutions</a></li>

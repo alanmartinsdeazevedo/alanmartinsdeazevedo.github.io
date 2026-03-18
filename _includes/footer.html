@@ -1,3 +1,5 @@
+{% assign t = site.data.translations[site.active_lang] %}
+
 <footer class="site-footer">
     <div class="footer-content">
         <div class="footer-section">
@@ -5,26 +7,27 @@
             <p>{{ site.description }}</p>
         </div>
         <div class="footer-section">
-            <h3>Quick Links</h3>
+            <h3>{{ t.footer.quick_links }}</h3>
             <ul>
-                <li><a href="{{ '/' | relative_url }}">Home</a></li>
-                <li><a href="{{ '/knowledge-base/' | relative_url }}">Knowledge Base</a></li>
+                <li><a href="{{ '/' | relative_url }}">{{ t.nav.home }}</a></li>
+                <li><a href="{{ '/knowledge-base/' | relative_url }}">{{ t.nav.knowledge_base }}</a></li>
+                <li><a href="{{ '/projects/' | relative_url }}">{{ t.nav.projects }}</a></li>
                 {% if site.author.github %}
-                <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">{{ t.nav.github }}</a></li>
                 {% endif %}
             </ul>
         </div>
         <div class="footer-section">
-            <h3>Categories</h3>
+            <h3>{{ t.footer.categories }}</h3>
             <ul>
-                <li><a href="{{ '/knowledge-base/#development' | relative_url }}">Development Environment</a></li>
-                <li><a href="{{ '/knowledge-base/#server' | relative_url }}">Server Setup</a></li>
-                <li><a href="{{ '/knowledge-base/#tools' | relative_url }}">Tools & CLI</a></li>
-                <li><a href="{{ '/knowledge-base/#references' | relative_url }}">Quick References</a></li>
+                <li><a href="{{ '/knowledge-base/#development' | relative_url }}">{{ t.footer.development }}</a></li>
+                <li><a href="{{ '/knowledge-base/#server' | relative_url }}">{{ t.footer.server }}</a></li>
+                <li><a href="{{ '/knowledge-base/#tools' | relative_url }}">{{ t.footer.tools }}</a></li>
+                <li><a href="{{ '/knowledge-base/#references' | relative_url }}">{{ t.footer.references }}</a></li>
             </ul>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}. Built with Jekyll and hosted on GitHub Pages.</p>
+        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}. {{ t.footer.built_with }}</p>
     </div>
 </footer>

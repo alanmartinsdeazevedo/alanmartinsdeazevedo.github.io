@@ -1,3 +1,10 @@
+{% assign t = site.data.translations[site.active_lang] %}
+{% assign base_url = page.url %}
+{% unless site.active_lang == site.default_lang %}
+  {% assign lang_prefix = "/" | append: site.active_lang %}
+  {% assign base_url = page.url | remove_first: lang_prefix %}
+{% endunless %}
+
 <header class="site-header">
     <nav class="nav-container">
         <div class="nav-brand">
@@ -9,16 +16,28 @@
             <span></span>
         </button>
         <ul class="nav-menu">
-            <li><a href="{{ '/' | relative_url }}">Home</a></li>
-            <li><a href="{{ '/knowledge-base/' | relative_url }}">Knowledge Base</a></li>
-            <li><a href="{{ '/#projects' | relative_url }}">Projects</a></li>
-            <li><a href="{{ '/#contact' | relative_url }}">Contact</a></li>
+            <li><a href="{{ '/' | relative_url }}">{{ t.nav.home }}</a></li>
+            <li><a href="{{ '/knowledge-base/' | relative_url }}">{{ t.nav.knowledge_base }}</a></li>
+            <li><a href="{{ '/projects/' | relative_url }}">{{ t.nav.projects }}</a></li>
+            <li><a href="{{ '/#contact' | relative_url }}">{{ t.nav.contact }}</a></li>
             {% if site.author.github %}
-            <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">{{ t.nav.github }}</a></li>
             {% endif %}
         </ul>
-        <button class="theme-toggle" aria-label="Toggle dark mode">
-            <span class="theme-icon"></span>
-        </button>
+        <div class="nav-actions">
+            <div class="lang-switcher">
+                {% for lang in site.languages %}
+                {% if lang == site.default_lang %}
+                    {% assign switch_url = base_url %}
+                {% else %}
+                    {% capture switch_url %}/{{ lang }}{{ base_url }}{% endcapture %}
+                {% endif %}
+                <a href="{{ switch_url }}" class="lang-btn{% if lang == site.active_lang %} active{% endif %}" aria-label="{{ site.data.languages[lang].name }}">{{ site.data.languages[lang].label }}</a>
+                {% endfor %}
+            </div>
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <span class="theme-icon"></span>
+            </button>
+        </div>
     </nav>
 </header>

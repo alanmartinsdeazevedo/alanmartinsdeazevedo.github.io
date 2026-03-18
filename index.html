@@ -2,114 +2,116 @@
 layout: default
 title: Home
 ---
+{% assign t = site.data.translations[site.active_lang] %}
 
 <section class="hero">
-    <h1>Hello, I'm Alan!</h1>
-    <p class="tagline">Software Developer & Tech Enthusiast</p>
-    <p class="hero-description">
-        Welcome to my portfolio and knowledge base. I document my learning journey,
-        share technical guides, and showcase my projects. Feel free to explore and learn along with me.
-    </p>
+    <h1>{{ t.hero.greeting }}</h1>
+    <p class="tagline">{{ t.hero.tagline }}</p>
+    <p class="hero-description">{{ t.hero.description }}</p>
     <div class="contact-links">
-        <a href="#projects" class="btn">View Projects</a>
-        <a href="{{ '/knowledge-base/' | relative_url }}" class="btn btn-secondary">Browse Knowledge Base</a>
+        <a href="#projects" class="btn">{{ t.hero.view_projects }}</a>
+        <a href="{{ '/knowledge-base/' | relative_url }}" class="btn btn-secondary">{{ t.hero.browse_kb }}</a>
     </div>
 </section>
 
 <section id="about" class="section">
-    <h2 class="section-title">About Me</h2>
+    <h2 class="section-title">{{ t.about.title }}</h2>
     <p style="max-width: 800px; margin: 0 auto; text-align: center; color: var(--text-secondary);">
-        I'm a software developer passionate about building efficient solutions and sharing knowledge.
-        This site serves as both a showcase of my work and a documentation hub for technical guides
-        and best practices I've learned along the way.
+        {{ t.about.text }}
     </p>
 </section>
 
 <section id="skills" class="section">
-    <h2 class="section-title">Skills & Technologies</h2>
+    <h2 class="section-title">{{ t.skills.title }}</h2>
     <div class="skills-grid">
         <div class="skill-card">
-            <h3>Backend Development</h3>
-            <p>Node.js, Java, Python, REST APIs, Database Design</p>
+            <h3>{{ t.skills.backend }}</h3>
+            <p>{{ t.skills.backend_desc }}</p>
         </div>
         <div class="skill-card">
-            <h3>Frontend Development</h3>
-            <p>HTML, CSS, JavaScript, React, Responsive Design</p>
+            <h3>{{ t.skills.frontend }}</h3>
+            <p>{{ t.skills.frontend_desc }}</p>
         </div>
         <div class="skill-card">
-            <h3>DevOps & Tools</h3>
-            <p>Git, Docker, Linux, CI/CD, Cloud Services</p>
+            <h3>{{ t.skills.devops }}</h3>
+            <p>{{ t.skills.devops_desc }}</p>
         </div>
         <div class="skill-card">
-            <h3>Mobile Development</h3>
-            <p>Flutter, Android, Cross-platform Development</p>
+            <h3>{{ t.skills.mobile }}</h3>
+            <p>{{ t.skills.mobile_desc }}</p>
         </div>
     </div>
 </section>
 
 <section id="projects" class="section">
-    <h2 class="section-title">Featured Projects</h2>
+    <h2 class="section-title">{{ t.projects.title }}</h2>
     <div class="projects-grid">
+        {% assign featured = site.projects | sort: "date" | reverse | limit: 3 %}
+        {% for project in featured %}
         <div class="project-card">
-            <h3>Hive</h3>
-            <p>ISP Management System. Full-stack platform for internet service providers built with Next.js, Flutter and NestJS + PostgreSQL. Features customer management, subscription plans, recurring billing, Mikrotik RouterOS integration, WhatsApp Cloud API and RBAC.</p>
+            {% if project.status %}
+            {% assign status_key = project.status | downcase | replace: ' ', '_' %}
+            <span class="project-status project-status--{{ project.status | downcase | replace: ' ', '-' }}" style="font-size: 0.8rem; margin-bottom: var(--spacing-xs); display: inline-block;">{{ t.projects[status_key] }}</span>
+            {% endif %}
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            {% if project.tech %}
+            <div class="project-tech-tags">
+                {% for tag in project.tech limit:4 %}
+                <span class="tech-tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
             <div class="project-links">
-                <a href="https://github.com/alanmartinsdeazevedo/hive-front" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
+                <a href="{{ project.url | relative_url }}" class="btn">{{ t.projects.view_details }}</a>
+                {% if project.github %}
+                <a href="{{ project.github }}" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
+                {% endif %}
             </div>
         </div>
-        <div class="project-card">
-            <h3>Dex</h3>
-            <p>IT Operations Management Platform. Centralizes Service Desk operations with Atlassian/Jira integration, Microsoft Entra ID authentication, and automated user provisioning. Stack: Next.js, TypeScript, PostgreSQL, Prisma, Docker.</p>
-            <div class="project-links">
-                <a href="https://github.com/alanmartinsdeazevedo/dex" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
-            </div>
-        </div>
-        <div class="project-card">
-            <h3>Imobee</h3>
-            <p>Real Estate Management System. Web platform built with Next.js and NestJS + PostgreSQL. Features property and client management, sales and financial modules, management reports, integrated calendar, audit logs and RBAC. Containerized with Docker.</p>
-            <div class="project-links">
-                <a href="https://github.com/alanmartinsdeazevedo/Imobee" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
-            </div>
-        </div>
+        {% endfor %}
+    </div>
+    <div style="text-align: center; margin-top: var(--spacing-lg);">
+        <a href="{{ '/projects/' | relative_url }}" class="btn btn-secondary">{{ t.projects.view_all }}</a>
     </div>
 </section>
 
 <section id="knowledge-base-preview" class="section">
-    <h2 class="section-title">Knowledge Base</h2>
+    <h2 class="section-title">{{ t.kb_preview.title }}</h2>
     <p style="text-align: center; margin-bottom: var(--spacing-lg); color: var(--text-secondary);">
-        Explore guides, tutorials, and technical documentation
+        {{ t.kb_preview.description }}
     </p>
     <div class="kb-grid">
         <div class="kb-category">
-            <h3>Development Environment</h3>
-            <p>Setup guides for development tools and environments</p>
-            <a href="{{ '/knowledge-base/#development' | relative_url }}" class="btn btn-secondary" style="margin-top: var(--spacing-sm);">View Guides</a>
+            <h3>{{ t.kb_preview.development }}</h3>
+            <p>{{ t.kb_preview.development_desc }}</p>
+            <a href="{{ '/knowledge-base/#development' | relative_url }}" class="btn btn-secondary" style="margin-top: var(--spacing-sm);">{{ t.kb_preview.view_guides }}</a>
         </div>
         <div class="kb-category">
-            <h3>Server Setup</h3>
-            <p>Installation and configuration guides for servers</p>
-            <a href="{{ '/knowledge-base/#server' | relative_url }}" class="btn btn-secondary" style="margin-top: var(--spacing-sm);">View Guides</a>
+            <h3>{{ t.kb_preview.server }}</h3>
+            <p>{{ t.kb_preview.server_desc }}</p>
+            <a href="{{ '/knowledge-base/#server' | relative_url }}" class="btn btn-secondary" style="margin-top: var(--spacing-sm);">{{ t.kb_preview.view_guides }}</a>
         </div>
         <div class="kb-category">
-            <h3>Tools & CLI</h3>
-            <p>Command-line tools and workflow optimization</p>
-            <a href="{{ '/knowledge-base/#tools' | relative_url }}" class="btn btn-secondary" style="margin-top: var(--spacing-sm);">View Guides</a>
+            <h3>{{ t.kb_preview.tools }}</h3>
+            <p>{{ t.kb_preview.tools_desc }}</p>
+            <a href="{{ '/knowledge-base/#tools' | relative_url }}" class="btn btn-secondary" style="margin-top: var(--spacing-sm);">{{ t.kb_preview.view_guides }}</a>
         </div>
         <div class="kb-category">
-            <h3>Quick References</h3>
-            <p>Cheat sheets and quick reference guides</p>
-            <a href="{{ '/knowledge-base/#references' | relative_url }}" class="btn btn-secondary" style="margin-top: var(--spacing-sm);">View Guides</a>
+            <h3>{{ t.kb_preview.references }}</h3>
+            <p>{{ t.kb_preview.references_desc }}</p>
+            <a href="{{ '/knowledge-base/#references' | relative_url }}" class="btn btn-secondary" style="margin-top: var(--spacing-sm);">{{ t.kb_preview.view_guides }}</a>
         </div>
     </div>
 </section>
 
 <section id="contact" class="section">
-    <h2 class="section-title">Get In Touch</h2>
+    <h2 class="section-title">{{ t.contact.title }}</h2>
     <p style="text-align: center; margin-bottom: var(--spacing-lg); color: var(--text-secondary);">
-        Feel free to reach out for collaborations or just a friendly chat
+        {{ t.contact.description }}
     </p>
     <div class="contact-links">
         <a href="https://github.com/{{ site.author.github }}" class="btn" target="_blank" rel="noopener">GitHub</a>
-        <a href="mailto:{{ site.author.email }}" class="btn btn-secondary">Email</a>
+        <a href="mailto:{{ site.author.email }}" class="btn btn-secondary">{{ t.contact.email }}</a>
     </div>
 </section>

@@ -1,0 +1,45 @@
+---
+layout: default
+title: Projects
+description: A collection of software projects I have built
+---
+{% assign t = site.data.translations[site.active_lang] %}
+
+<section class="hero" style="padding: var(--spacing-lg) 0;">
+    <h1>{{ t.projects_page.title }}</h1>
+    <p class="tagline">{{ t.projects_page.tagline }}</p>
+</section>
+
+<section class="section">
+    <div class="projects-grid">
+        {% assign sorted_projects = site.projects | sort: "date" | reverse %}
+        {% for project in sorted_projects %}
+        <div class="project-card">
+            {% if project.status %}
+            {% assign status_key = project.status | downcase | replace: ' ', '_' %}
+            <span class="project-status project-status--{{ project.status | downcase | replace: ' ', '-' }}" style="font-size: 0.8rem; margin-bottom: var(--spacing-xs); display: inline-block;">{{ t.projects[status_key] }}</span>
+            {% endif %}
+            <h3>{{ project.title }}</h3>
+            {% if project.description %}
+            <p>{{ project.description }}</p>
+            {% endif %}
+            {% if project.tech %}
+            <div class="project-tech-tags" style="margin-bottom: var(--spacing-sm);">
+                {% for tag in project.tech limit:4 %}
+                <span class="tech-tag">{{ tag }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <div class="project-links">
+                <a href="{{ project.url | relative_url }}" class="btn">{{ t.projects.view_details }}</a>
+                {% if project.github %}
+                <a href="{{ project.github }}" class="btn btn-secondary" target="_blank" rel="noopener">GitHub</a>
+                {% endif %}
+                {% if project.demo %}
+                <a href="{{ project.demo }}" class="btn btn-secondary" target="_blank" rel="noopener">{{ t.project_layout.live_demo }}</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

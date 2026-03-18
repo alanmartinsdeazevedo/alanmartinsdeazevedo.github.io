@@ -169,6 +169,49 @@ a:hover {
     transition: all 0.3s ease;
 }
 
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.lang-btn {
+    display: block;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    letter-spacing: 0.03em;
+}
+
+.lang-btn:hover {
+    color: var(--accent-color);
+    background-color: var(--bg-primary);
+}
+
+.lang-btn.active {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+.lang-btn.active:hover {
+    color: #ffffff;
+    background-color: var(--link-hover);
+}
+
 .theme-toggle {
     background: none;
     border: 2px solid var(--border-color);
@@ -559,6 +602,164 @@ a:hover {
 }
 
 /* ==================== */
+/* Project Page */
+/* ==================== */
+
+.project-page {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.project-page-header {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.project-page-description {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin: var(--spacing-sm) 0;
+}
+
+.project-page-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin: var(--spacing-sm) 0;
+}
+
+.project-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.project-status--in-development {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.project-status--completed {
+    background-color: #d1e7dd;
+    color: #0a3622;
+}
+
+.project-status--archived {
+    background-color: var(--bg-secondary);
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .project-status--in-development {
+    background-color: #3d2e00;
+    color: #ffc107;
+}
+
+[data-theme="dark"] .project-status--completed {
+    background-color: #0a2e1a;
+    color: #75b798;
+}
+
+.project-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin: var(--spacing-sm) 0;
+}
+
+.tech-tag {
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+.project-page-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    flex-wrap: wrap;
+    margin-top: var(--spacing-md);
+}
+
+.project-page-content {
+    line-height: 1.8;
+}
+
+.project-page-content h2 {
+    margin-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.project-page-content h3 {
+    margin-top: var(--spacing-md);
+}
+
+.project-page-content ul,
+.project-page-content ol {
+    margin-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-page-content li {
+    margin: var(--spacing-xs) 0;
+}
+
+.project-page-content code {
+    background-color: var(--bg-code);
+    color: var(--code-text);
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 0.9em;
+}
+
+.project-page-content pre {
+    background-color: var(--bg-code);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: var(--spacing-sm);
+    overflow-x: auto;
+    margin: var(--spacing-sm) 0;
+}
+
+.project-page-content pre code {
+    background: none;
+    color: var(--text-primary);
+    padding: 0;
+}
+
+.project-page-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-sm) 0;
+}
+
+.project-page-content table th,
+.project-page-content table td {
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    text-align: left;
+}
+
+.project-page-content table th {
+    background-color: var(--bg-secondary);
+    font-weight: 600;
+}
+
+.project-page-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    margin: var(--spacing-sm) 0;
+}
+
+/* ==================== */
 /* Contact Section */
 /* ==================== */
 
@@ -651,6 +852,11 @@ a:hover {
 
     .nav-toggle {
         display: flex;
+    }
+
+    .lang-btn {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.72rem;
     }
 
     .hero h1 {

@@ -1,0 +1,105 @@
+nav:
+  home: "Home"
+  projects: "Projects"
+  knowledge_base: "Knowledge Base"
+  contact: "Contact"
+  github: "GitHub"
+
+hero:
+  greeting: "Hello, I'm Alan!"
+  tagline: "Software Developer & Tech Enthusiast"
+  description: "Welcome to my portfolio and knowledge base. I document my learning journey, share technical guides, and showcase my projects. Feel free to explore and learn along with me."
+  view_projects: "View Projects"
+  browse_kb: "Browse Knowledge Base"
+
+about:
+  title: "About Me"
+  text: "I'm a software developer passionate about building efficient solutions and sharing knowledge. This site serves as both a showcase of my work and a documentation hub for technical guides and best practices I've learned along the way."
+
+skills:
+  title: "Skills & Technologies"
+  backend: "Backend Development"
+  backend_desc: "Node.js, Java, Python, REST APIs, Database Design"
+  frontend: "Frontend Development"
+  frontend_desc: "HTML, CSS, JavaScript, React, Responsive Design"
+  devops: "DevOps & Tools"
+  devops_desc: "Git, Docker, Linux, CI/CD, Cloud Services"
+  mobile: "Mobile Development"
+  mobile_desc: "Flutter, Android, Cross-platform Development"
+
+projects:
+  title: "Featured Projects"
+  view_details: "View Details"
+  view_all: "View All Projects"
+  in_development: "In Development"
+  completed: "Completed"
+  archived: "Archived"
+
+kb_preview:
+  title: "Knowledge Base"
+  description: "Explore guides, tutorials, and technical documentation"
+  development: "Development Environment"
+  development_desc: "Setup guides for development tools and environments"
+  server: "Server Setup"
+  server_desc: "Installation and configuration guides for servers"
+  tools: "Tools & CLI"
+  tools_desc: "Command-line tools and workflow optimization"
+  references: "Quick References"
+  references_desc: "Cheat sheets and quick reference guides"
+  view_guides: "View Guides"
+
+kb_page:
+  title: "Knowledge Base"
+  tagline: "Technical Guides & Documentation"
+  search_placeholder: "Search articles..."
+
+kb_index:
+  sections:
+    development: "Development Environment"
+    server: "Server Setup"
+    tools: "Tools & CLI"
+    references: "Quick References"
+  categories:
+    java_jdk: "Java & JDK"
+    flutter_mobile: "Flutter & Mobile"
+    ide_setup: "IDE Setup"
+    nodejs: "Node.js"
+    web_servers: "Web Servers"
+    ssh_remote: "SSH & Remote Access"
+    databases: "Databases"
+    git: "Git"
+    docker: "Docker"
+    package_managers: "Package Managers"
+    command_sheets: "Command Cheat Sheets"
+    config_templates: "Configuration Templates"
+    troubleshooting: "Troubleshooting"
+
+projects_page:
+  title: "Projects"
+  tagline: "Software I've Built"
+
+contact:
+  title: "Get In Touch"
+  description: "Feel free to reach out for collaborations or just a friendly chat"
+  email: "Email"
+
+footer:
+  quick_links: "Quick Links"
+  categories: "Categories"
+  development: "Development Environment"
+  server: "Server Setup"
+  tools: "Tools & CLI"
+  references: "Quick References"
+  built_with: "Built with Jekyll and hosted on GitHub Pages."
+
+article:
+  home: "Home"
+  kb: "Knowledge Base"
+  last_updated: "Last updated:"
+  related: "Related Articles"
+
+project_layout:
+  home: "Home"
+  projects: "Projects"
+  github: "View on GitHub"
+  live_demo: "Live Demo"

@@ -1,0 +1,14 @@
+en:
+  label: "EN"
+  name: "English"
+  bcp47: "en"
+
+pt-br:
+  label: "PT"
+  name: "Português"
+  bcp47: "pt-BR"
+
+es:
+  label: "ES"
+  name: "Español"
+  bcp47: "es"
